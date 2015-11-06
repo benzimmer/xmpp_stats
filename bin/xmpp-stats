@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require './xmpp_stats'
+
+client = XmppStats.new ARGV[0]
+
+if ARGV[1] == 'log'
+  puts "#{Time.now};#{client.users}"
+else
+  puts "Users online: #{client.users}"
+end
